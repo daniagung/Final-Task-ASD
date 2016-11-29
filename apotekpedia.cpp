@@ -14,6 +14,9 @@ using namespace std;
 
 //----------------- Fungsi dan Prosedur Default ----------------//
 
+
+//----------------- Create ----------------//
+
 void createListAPK(apotek &R) {
     first(R)= NULL;
     last(R)= NULL;
@@ -42,6 +45,8 @@ void createObat(infotypeObat &ObatAPK) {
 
     cout<<endl;
 }
+
+//----------------- Address ----------------//
 
 addressAPK alokasiAPK(infotypeAPK APK) {
     addressAPK P;
@@ -104,6 +109,7 @@ addressObat findElmObat(addressAPK PAPK, string idObat){
     }
 }
 
+//----------------- View ----------------//
 
 void printInfoAPK(apotek APK){
     addressAPK P;
@@ -160,6 +166,8 @@ void printInfoObat(apotek APK){
         }
     }
 }
+
+//----------------- Editing ----------------//
 
 void editInfoAPK(apotek &APK){
     if(APK.first != NULL){ //mengecek apakah apotek kosong
@@ -231,6 +239,8 @@ void editHargaObat(apotek &APK){
     }
 }
 
+//----------------- Seacrhing ----------------//
+
 void searchAPK(apotek APK){
     if (APK.first == NULL)
         cout <<"Tidak Ada Data Apotek"<<endl;
@@ -297,6 +307,7 @@ void searchObat(apotek APK) {
     }
 }
 
+//----------------- Insert Obat ----------------//
 void insertObatFirst(addressAPK PAPK, infotypeObat addObat){
     if (PAPK == NULL){
         cout <<"Tidak Ditemukan Apotek";
@@ -409,6 +420,7 @@ void addObatAPK(apotek &APK){
     }
 }
 
+//----------------- Delete Apotek ----------------//
 
 addressAPK deleteFirstAPK(apotek &APK){
     addressAPK P;
@@ -497,8 +509,126 @@ void deleteAPKbyID(apotek &APK){
             APK.last = NULL;
             delete PAPK;
         }
-        else {
+            else if ((PAPK == APK.last) && (PAPK->next != NULL)){
+                //Kasus elemen Yang di delete di elemen yang pertama
+                deleteFirstAPK(APK);
+            }
+            else if ((PAPK == APK.last) && (PAPK->prev != NULL)){
+                //Kasus Elemen yang di delete elemen terakhir
+                deleteLastAPK(APK);
+            }
+            else if ((PAPK != APK.first) && (PAPK != APK.last) && (PAPK->next != NULL)){
+                //kasus element di tenggah
+                addressAPK P =PAPK->prev;
+                P->next = PAPK->next;
+                PAPK->next-prev = P;
+                PAPK->next = NULL;
+                PAPK->prev = NULL;
+                delete PAPK;
+            }
+            else
+                cout<<"Tidak Dapat Di Delete"<<endl;
 
+    }
+}
+
+
+void deleteAPKOption(apotek &APK){
+    if(APK.first == NULL)
+        cout<<"Tidak ada Data Apotek (Kosong)"<<endl;
+    else {
+        char menu;
+        ObatLabel :
+        cout << "Pilih Jenis Metode Delete"<<endl
+             << "1. Pilih Delete First"<<endl
+             << "2. Pilih Delete Last"<<endl
+             << "3. Pilih Delete After"<<endl
+             << "4. Pilih Delete By ID"<<endl
+             << "5. Exit"<<endl;
+
+        cout <<"Masukkan Pilihan : ";
+        cin>>menu; cin.ignore();
+        switch (menu){
+            case '1' : deleteFirstAPK(APK); cout<<"Delete Data APK Berhasil"<<endl; break;
+            case '2' : deleteLastAPK(APK); cout<<"Delete Data APK Berhasil"<<endl; break;
+            case '3' : deleteAfterAPK(APK); cout<<"Delete Data APK Berhasil"<<endl; break;
+            case '4' : deleteAPKbyID(APK); cout<<"Delete Data APK Berhasil"<<endl; break;
+            default  : cin.ignore(); goto ObatLabel;
         }
+        //obatAkhir;
+    }
+}
+
+//----------------- Delete Obat ----------------//
+
+void deleteObatFirst(apotek &APK){
+    cout<<endl;
+    printInfoAPK(APK);
+    cout<<endl;
+    string SearchByID;
+    cout<<"Masukkan ID Apotek yang Akan Dihapus Obatnya: "; getline(cin,SearchByID);
+    addressAPK PAPK = findElmAPK(APK, SearchByID);
+    if (PAPK == NULL){
+        cout<<"Tidak Ditemukan Apotek";
+    }
+    else {
+        addressObat M = PAPK->daftarObat;
+        if (M == NULL){
+            cout<<"Tidak Terdapat Obat"<<endl;
+        }
+        else {
+            if (M->next == NULL){
+                PAPK->daftarObat = NULL;
+                M = NULL;
+                delete M;
+            }
+            else {
+                PAPK->daftarObat = M->next;
+                M->next = NULL;
+                delete M;
+            }
+            cout<<"Obat Berhasil dihapus"<<endl;
+        }
+    }
+}
+
+void deleteObatAfter(apotek &APK){
+    cout<<endl;
+    printInfoAPK(APK);
+    cout<<endl;
+    string searchByIDAPK;
+    string SearchIDObat;
+    cout << "Masukkan ID Apotek yang akan di hapus Obatnya: ";getline(cin, searchByIDAPK);
+    addressAPK PAPK = findElmAPK(APK, searchByIDAPK);
+    if (PAPK == NULL){
+        cout<<"tidak Ditemukan Apotek"endl;
+    }
+    else {
+        addressObat  M = PAPK->daftarObat;
+        if (M == NULL){
+            cout<<"Tidak Terdapat Obat"<<endl;
+        }
+        else {
+            cout << "List Obat APK - "<<PAPK->info.namaAPK<<endl;
+            while (M != NULL) {
+                //Loping untuk menapilkan Obat Apotek
+                cout << "Data Ditemukan" << endl;
+                cout << "ID Obat      : " << M->info.idObat << endl;
+                cout << "Nama Obat    : " << M->info.namaObat << endl;
+                cout << "Jenis Obat   : " << M->info.jenisObat << endl;
+                cout << "Harga Obat   : " << M->info.hargaObat << endl;
+                cout << "Stock Obat   : " << M->info.stock << endl;
+                cout << "Kadaluarsa   : " << M->info.kadaluarsa << endl;
+                cout << endl;
+                M = M->next;
+            }
+            cout <<endl;
+            cout<< "Masukkan ID Obat Sebelum ID yang akan Dihapus : ";
+            cin>> SearchIDObat; cin.ignore();
+            M = findElmObat(APK, SearchIDObat);
+            if
+        }
+
+
     }
 }

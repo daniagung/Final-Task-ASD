@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/Dani Project/ApotekPedia Versi 3/apotekpedia.cpp" "E:/Dani Project/ApotekPedia Versi 3/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/apotekpedia.cpp.obj"
-  "E:/Dani Project/ApotekPedia Versi 3/main.cpp" "E:/Dani Project/ApotekPedia Versi 3/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/main.cpp.obj"
+  "E:/Dani Project/Final-task-ASD/apotekpedia.cpp" "E:/Dani Project/Final-task-ASD/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/apotekpedia.cpp.obj"
+  "E:/Dani Project/Final-task-ASD/main.cpp" "E:/Dani Project/Final-task-ASD/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
