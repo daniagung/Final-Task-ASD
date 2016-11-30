@@ -100,6 +100,7 @@ void deleteObatFirst(apotek &APK);
 void deleteObatAfter(apotek &APK);
 void deleteObatLast(apotek &APK);
 void deleteObatByID(apotek &APK);
+void deleteObatOption(apotek &APK);
 
 void insertFirstAPK(apotek &R, addressAPK P);
 void insertLastAPK(apotek &R, addressAPK P);
