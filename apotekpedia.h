@@ -37,8 +37,8 @@ struct infotypeObat {
     string idObat;
     string namaObat;
     string kadaluarsa;
-    int stock;
-    float hargaObat;
+    string stock;
+    string hargaObat;
     string jenisObat;
     addressAnggota anggota;
 };
@@ -109,10 +109,10 @@ void addapotek(apotek &R);
 
 void countTotalAPK(apotek APK);
 void countTotalObat(apotek APK);
-void countObat(apotek APK);
+void menucountObat(apotek APK);
+int countLengthObat(addressObat PAPK);
 
 void sortapotek(apotek &APK);
-
-int countLengthObat(addressObat PAPK);
 void sortObat(apotek &APK);
+
 #endif //APOTEKPEDIA_VERSI_3_APOTEKPEDIA_H
