@@ -12,15 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fb22131-6c15-403b-b669-9033a3488aeb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/apotekpedia.cpp.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/main.cpp.obj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/objects.a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/CXX.includecache" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ApotekPedia_Versi_3.dir/depend.internal" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apotekpedia.cpp" afterPath="$PROJECT_DIR$/apotekpedia.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apotekpedia.h" afterPath="$PROJECT_DIR$/apotekpedia.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +46,8 @@
       <file leaf-file-name="apotekpedia.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apotekpedia.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+            <state relative-caret-position="336">
+              <caret line="1333" column="32" lean-forward="false" selection-start-line="1333" selection-start-column="32" selection-end-line="1333" selection-end-column="32" />
               <folding>
                 <element signature="e#82#106#0" expanded="true" />
               </folding>
@@ -329,7 +322,7 @@
       <updated>1480434617273</updated>
       <workItem from="1480434618616" duration="4329000" />
       <workItem from="1480451984137" duration="6902000" />
-      <workItem from="1480508959440" duration="20270000" />
+      <workItem from="1480508959440" duration="21544000" />
     </task>
     <task id="LOCAL-00001" summary="penambahan insert">
       <created>1480530715720</created>
@@ -345,11 +338,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480535103259</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Kurang Sorting woy">
+      <created>1480572223008</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1480572223008</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31501000" />
+    <option name="totallyTimeSpent" value="32775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="0" width="1378" height="744" extended-state="0" />
@@ -363,7 +363,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="259" width="1366" height="209" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18454258" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18454258" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -512,8 +512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apotekpedia.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        <state relative-caret-position="336">
+          <caret line="1333" column="32" lean-forward="false" selection-start-line="1333" selection-start-column="32" selection-end-line="1333" selection-end-column="32" />
           <folding>
             <element signature="e#82#106#0" expanded="true" />
           </folding>

@@ -1326,6 +1326,9 @@ void sortObat(apotek &APK){
                 {
                     cout <<"ID Obat    : "<<M->info.idObat<<endl;
                     cout <<"Nama Obat  : "<<M->info.namaObat<<endl;
+                    cout<<"Jenis Obat    : "<<M->info.jenisObat<<endl;
+                    cout<<"Stock Obat    : "<<M->info.stock<<endl;
+                    cout<<"Kadaluarsa    : "<<M->info.kadaluarsa<<endl;
                     cout <<"Harga Obat : "<<M->info.hargaObat<<endl;
                     cout << endl;
                     M = M->next;
