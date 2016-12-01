@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Dani Project/Final-task-ASD/apotekpedia.cpp
+apotekpedia.h
+E:/Dani Project/Final-task-ASD/apotekpedia.h
+iostream
+-
+conio.h
+-
+windows.h
+-
+ctime
+-
+cstdio
+-
+sstream
+-
+
+E:/Dani Project/Final-task-ASD/apotekpedia.h
+iostream
+-
+ctime
+-
+
+E:/Dani Project/Final-task-ASD/main.cpp
+iostream
+-
+windows.h
+-
+conio.h
+-
+apotekpedia.h
+E:/Dani Project/Final-task-ASD/apotekpedia.h
+

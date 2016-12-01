@@ -1,9 +1,11 @@
 //
-// Created by Mobile Innovation 3 on 29/11/2016.
+// Created by Dani Agung Prastiyo on 20/11/2016.
 //
 
 #ifndef APOTEKPEDIA_VERSI_3_APOTEKPEDIA_H
 #define APOTEKPEDIA_VERSI_3_APOTEKPEDIA_H
+
+// ---- Library --- //
 #include <iostream>
 #include <ctime>
 
@@ -28,9 +30,6 @@ struct infotypeAPK
     string namaAPK;
     string alamat;
     string tanggal;
-
-
-
 };
 
 struct infotypeObat {
@@ -110,9 +109,17 @@ void addapotek(apotek &R);
 void countTotalAPK(apotek APK);
 void countTotalObat(apotek APK);
 void menucountObat(apotek APK);
-int countLengthObat(addressObat PAPK);
 
+int countLengthObat(addressObat PAPK);
 void sortapotek(apotek &APK);
+void sortObat(apotek &APK);
+
+
+addressObat deleteObatFirstMergeSort(addressObat &M);
+void insertObatFirstMergeSort(addressObat &PAPK, addressObat M);
+void insertObatLastMergeSort(addressObat &PAPK, addressObat P);
+addressObat mergeInObat(addressObat left, addressObat right);
+addressObat mergeSortObat(addressObat PAPK);
 void sortObat(apotek &APK);
 
 #endif //APOTEKPEDIA_VERSI_3_APOTEKPEDIA_H

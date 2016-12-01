@@ -94,7 +94,7 @@ int main () {
     cout << "#### TUGAS BESAR STRUKTUR DATA ####"<<endl
          << "       #### DEEP WEB TEAM ####"<<endl
          <<endl
-         << "Obat :   1. Insert Toko Apotek"<<endl
+         << "         1. Insert Toko Apotek"<<endl
          << "         2. Insert Obat Apotek"<<endl
          << "         3. Edit Info Apotek"<<endl // Berdasarkan ID
          << "         4. Edit Info Obat Apotek"<<endl // Berdasarkan ID Obat
@@ -107,9 +107,9 @@ int main () {
          << "         11. Sorting Apotek by ID"<<endl
          << "         12. Sorting Obat APK by ID"<<endl
          << "         13. Hitung Total APK / Obat"<<endl
-         << "         666. EXIT"<<endl;
+         << "         0. EXIT"<<endl;
     cout << endl;
-    cout << "Input Your Obat (NUM) : "; int Obat;
+    cout << "Pilih Menu (Angka): "; int Obat;
     cin>>Obat; cin.ignore();
     switch (Obat) {
         case 1  :  system("cls"); addapotek(mainAPK);     getch(); goto ObatLabel;
@@ -122,10 +122,10 @@ int main () {
         case 8  :  system("cls"); printInfoObat(mainAPK);     getch(); goto ObatLabel;
         case 9  :  system("cls"); searchAPK(mainAPK);          getch(); goto ObatLabel;
         case 10  :  system("cls"); searchObat(mainAPK);        getch(); goto ObatLabel;
-//        case 11  :  system("cls"); sortapotek(mainAPK);    getch(); goto ObatLabel;
- //      case 12  :  system("cls"); sortObat(mainAPK);          getch(); goto ObatLabel;
+//      case 11  :  system("cls"); sortapotek(mainAPK);    getch(); goto ObatLabel;
+            //     case 12  :  system("cls"); sortObat(mainAPK);          getch(); goto ObatLabel;
         case 13  :  system("cls"); menucountObat(mainAPK);          getch(); goto ObatLabel;
-        case 666  :  goto ExitLabel; // Case Exit
+        case 0  :  goto ExitLabel; // Case Exit
         default : cin.ignore();  goto ObatLabel; // Case Handling Inputan Lain
     }
     ExitLabel: ;
