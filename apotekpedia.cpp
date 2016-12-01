@@ -500,7 +500,7 @@ void deleteAfterAPK(apotek &APK){
 void deleteAPKbyID(apotek &APK){
     string searchAPK;
     printInfoAPK(APK);
-    cout<<"Masukkan ID Apotek Sebelum Apotek di depan Yang akan dihapus : "; getline(cin, searchAPK);
+    cout<<"Masukkan ID Yang akan dihapus : "; getline(cin, searchAPK);
     addressAPK PAPK = findElmAPK(APK, searchAPK);
     if (PAPK == NULL){
         //ksus elemen tidak ditemukan
@@ -512,7 +512,7 @@ void deleteAPKbyID(apotek &APK){
             APK.last = NULL;
             delete PAPK;
         }
-        else if ((PAPK == APK.last) && (PAPK->next != NULL)){
+        else if ((PAPK == APK.first) && (PAPK->next != NULL)){
             //Kasus elemen Yang di delete di elemen yang pertama
             deleteFirstAPK(APK);
         }
@@ -521,7 +521,7 @@ void deleteAPKbyID(apotek &APK){
             deleteLastAPK(APK);
         }
         else if ((PAPK != APK.first) && (PAPK != APK.last) && (PAPK->next != NULL)){
-            //kasus element di tenggah
+            //kasus element di tenggah delete after
             addressAPK P =PAPK->prev;
             PAPK->next = PAPK->next;
             PAPK->next->prev = P;
@@ -960,7 +960,93 @@ void menucountObat(apotek APK){
 
 
 //----------------- Sorting Metode Merger Sort----------------//
-//Source Code By :
+int countLengthAPK(apotek APK){
+    int countNum = 0;
+    if(APK.first == NULL){
+        return 0;
+    } else {
+        addressAPK PAPK;
+        PAPK = APK.first;
+        while(PAPK != NULL){
+            countNum++;
+            PAPK = PAPK->next;
+        }
+        return countNum;
+    }
+}
+
+apotek mergeInAPK(apotek left, apotek right){
+    //cout<<"ASASD"<<endl;
+    //cout<<left.first.info->idAPK<<endl;
+    //cout<<right.first<<endl;
+
+    apotek resultList;
+    createListAPK(resultList); //List Baru untuk Penampung Element Terurut
+    addressAPK PAPK; //Address Buat Menampung data Pop untuk diinsert
+
+    while((left.first != NULL) && (right.first != NULL)){ //Selama Salah Satu List Belum Habis
+        if(left.first->info.idAPK <= right.first->info.idAPK){
+            PAPK = deleteFirstAPK(left);
+        } else {
+            PAPK = deleteFirstAPK(right);
+        }
+        insertLastAPK(resultList,PAPK); //Memasukan Element yang di Pop dari Salah Satu List, (Right/Left)
+    }
+
+    // Jika terdapat sisa Element dari List dari Kiri / Kanan (Sisanya pasti terurut karena proses rekursif awal)
+    while(left.first != NULL){
+        PAPK = deleteFirstAPK(left);
+        insertLastAPK(resultList,PAPK);
+    }
+    while(right.first != NULL){
+        PAPK = deleteFirstAPK(right);
+        insertLastAPK(resultList,PAPK);
+    }
+    return resultList;
+}
+
+apotek mergeSortAPK(apotek APK){
+    int lengthList = countLengthAPK(APK);
+    //cout<<lengthList<<endl;
+    apotek tmpList; // Ini nantinya akan jadi representatif list Kiri
+    createListAPK(tmpList);
+    addressAPK PAPK;
+
+    // Jika List Elemenya Satu Return List Tersebut
+    if(lengthList <=1){
+        return APK;
+    }
+    //
+    int i = 0;
+    while(i < lengthList/2){
+        PAPK = deleteFirstAPK(APK);
+        insertFirstAPK(tmpList,PAPK);
+        i++;
+    }
+
+    // Recursively sort both sublists
+    tmpList = mergeSortAPK(tmpList);
+    APK = mergeSortAPK(APK);
+
+    // Then merge the now-sorted sublists.
+    return mergeInAPK(tmpList,APK);
+}
+
+void sortapotek(apotek &APK){ //Has been edited
+    if(APK.first == NULL){
+        cout<<"Tidak ada Data Apotek"<<endl;
+    } else {
+        APK = mergeSortAPK(APK);
+        cout<<"========== SORT BERHASIL =========="<<endl;
+        cout << endl;
+        cout << "HASIL :"<<endl;
+        cout << endl;
+        printInfoAPK(APK);
+    }
+}
+
+
+
 
 int countLengthObat(addressObat PAPK){
     int countNum = 0;
