@@ -62,7 +62,7 @@ int main () {
         dataObat.idObat="MED-001";
         dataObat.namaObat="Xamarin";
         dataObat.jenisObat="Migran";
-        dataObat.hargaObat="10000";
+        dataObat.hargaObat=10000;
         dataObat.stock= "17";
         dataObat.kadaluarsa="15 September 2017";
         addAPK = findElmAPK(mainAPK, "APK-0001");
@@ -72,7 +72,7 @@ int main () {
         dataObat.idObat="MED-002";
         dataObat.namaObat="Maltos";
         dataObat.jenisObat="pusing";
-        dataObat.hargaObat="20000";
+        dataObat.hargaObat=20000;
         dataObat.stock="147";
         dataObat.kadaluarsa="15 Desember 2017";
         addAPK = findElmAPK(mainAPK, "APK-0002");
@@ -82,7 +82,7 @@ int main () {
         dataObat.idObat="MED-002";
         dataObat.namaObat="Panasilin";
         dataObat.jenisObat="luka-luka";
-        dataObat.hargaObat="80000";
+        dataObat.hargaObat=80000;
         dataObat.stock="117";
         dataObat.kadaluarsa="15 Oktober 2017";
         addAPK = findElmAPK(mainAPK, "APK-0003");
