@@ -115,7 +115,7 @@ int main () {
         case 1  :  system("cls"); addapotek(mainAPK);     getch(); goto ObatLabel;
         case 2  :  system("cls"); addObatAPK(mainAPK);         getch(); goto ObatLabel;
         case 3  :  system("cls"); editInfoAPK(mainAPK);        getch(); goto ObatLabel;
-        case 4  :  system("cls"); editHargaObat(mainAPK);     getch(); goto ObatLabel;
+        case 4  :  system("cls"); editObat(mainAPK);     getch(); goto ObatLabel;
         case 5  :  system("cls"); deleteAPKOption(mainAPK);    getch(); goto ObatLabel;
         case 6  :  system("cls"); deleteObatOption(mainAPK);  getch(); goto ObatLabel;
         case 7  :  system("cls"); printInfoAPK(mainAPK);       getch(); goto ObatLabel;

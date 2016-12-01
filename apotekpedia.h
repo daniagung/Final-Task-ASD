@@ -43,6 +43,8 @@ struct infotypeObat {
 };
 
 // ------ Tipe Bentukan Element List ------ //
+
+//Tipe bentukan Parent Apotek
 struct elmAPK
 {
     infotypeAPK info;
@@ -51,6 +53,7 @@ struct elmAPK
     addressAPK prev;
 };
 
+//Tipe bentukan Child Obat
 struct elmObat {
     infotypeObat info;
     addressObat next;
@@ -80,7 +83,7 @@ addressObat findElmObat(addressAPK PAPK, string idObat);
 void printInfoAPK(apotek APK);
 void printInfoObat(apotek APK);
 void editInfoAPK(apotek &APK);
-void editHargaObat(apotek &APK);
+void editObat(apotek &APK);
 void searchAPK(apotek APK);
 void searchObat(apotek APK);
 
