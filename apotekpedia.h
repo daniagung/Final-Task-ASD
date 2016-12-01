@@ -37,7 +37,7 @@ struct infotypeObat {
     string namaObat;
     string kadaluarsa;
     string stock;
-    string hargaObat;
+    float hargaObat;
     string jenisObat;
     addressAnggota anggota;
 };
