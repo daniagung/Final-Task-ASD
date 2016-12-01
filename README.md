@@ -3,9 +3,9 @@ MULTI LINKED LIST ASD
 APLIKASI APOTEKPEDIA
 
 Kelompok: 
-No	NIM	Nama
-1	1301154646	Dani Agung Prastiyo
-2	1301154247	Hermawan Wiwit N.
+
+	Dani Agung Prastiyo
+	Hermawan Wiwit N.
 
 2.	Penjelasan Program
 Apotekpedia adalah aplikasi yang berfungsi untuk melakukan pendataan apotek-apotek yang berada di Kabupaten Bandung. Program ini melakukan pendataan dengan representasi multi linked list yang mana list tersebut mempunyai list induk dan list anak. List induk berisi daftar nama apotek yang mempunyai atribut ID Apotek, alamat apotek, jumlah obat yang dijual. . Sedangkan list anak berisi daftar menu obat yang dijual apotek tersebut, mempunyai atribut ID obat, nama obat, jenis obat, tanggal kadaluarsa, stok obat yang tersedia dan harga dari obat tersebut.
