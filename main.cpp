@@ -15,7 +15,7 @@ int main () {
 
     {   // Test Case Parent Apotek
 
-        dataAPK.idAPK = "APK-0001";
+        dataAPK.idAPK = "APK-0010";
         dataAPK.namaAPK = "Apotek Setia Budi";
         dataAPK.alamat= "Jalan Bismillah Bandung";
         dataAPK.tanggal=" "    ;
@@ -23,7 +23,7 @@ int main () {
         insertLastAPK(mainAPK, addAPK);
 
 
-        dataAPK.idAPK = "APK-0002";
+        dataAPK.idAPK = "APK-0013";
         dataAPK.namaAPK = "Apotek Hamasah";
         dataAPK.alamat= "Jalan Kebenaran Bandung";
         dataAPK.tanggal=" "    ;
@@ -32,7 +32,7 @@ int main () {
 
 
 
-        dataAPK.idAPK = "APK-0003";
+        dataAPK.idAPK = "APK-0022";
         dataAPK.namaAPK = "Apotek Cinta";
         dataAPK.alamat= "Jalan Putus Nyambung Bandung";
         dataAPK.tanggal=" "    ;
@@ -41,7 +41,7 @@ int main () {
 
 
 
-        dataAPK.idAPK = "APK-0004";
+        dataAPK.idAPK = "APK-0088";
         dataAPK.namaAPK = "Apotek Kimia Farma";
         dataAPK.alamat= "Jalan atom Bandung";
         dataAPK.tanggal=" "    ;
@@ -50,7 +50,7 @@ int main () {
 
 
 
-        dataAPK.idAPK = "APK-0005";
+        dataAPK.idAPK = "APK-0025";
         dataAPK.namaAPK = "Apotek Genesis";
         dataAPK.alamat= "Jalan Terminator Bandung";
         dataAPK.tanggal=" "    ;
@@ -62,30 +62,30 @@ int main () {
         dataObat.idObat="MED-001";
         dataObat.namaObat="Xamarin";
         dataObat.jenisObat="Migran";
-        dataObat.hargaObat=10000;
+        dataObat.hargaObat="10000";
         dataObat.stock= "17";
         dataObat.kadaluarsa="15 September 2017";
-        addAPK = findElmAPK(mainAPK, "APK-0001");
+        addAPK = findElmAPK(mainAPK, "APK-0025");
         insertObatFirst(addAPK, dataObat);
 
 
         dataObat.idObat="MED-002";
         dataObat.namaObat="Maltos";
         dataObat.jenisObat="pusing";
-        dataObat.hargaObat=20000;
+        dataObat.hargaObat="20000";
         dataObat.stock="147";
         dataObat.kadaluarsa="15 Desember 2017";
-        addAPK = findElmAPK(mainAPK, "APK-0002");
+        addAPK = findElmAPK(mainAPK, "APK-0025");
         insertObatFirst(addAPK, dataObat);
 
 
         dataObat.idObat="MED-002";
         dataObat.namaObat="Panasilin";
         dataObat.jenisObat="luka-luka";
-        dataObat.hargaObat=80000;
+        dataObat.hargaObat="80000";
         dataObat.stock="117";
         dataObat.kadaluarsa="15 Oktober 2017";
-        addAPK = findElmAPK(mainAPK, "APK-0003");
+        addAPK = findElmAPK(mainAPK, "APK-0025");
         insertObatFirst(addAPK, dataObat);
 
     }
@@ -122,8 +122,8 @@ int main () {
         case 8  :  system("cls"); printInfoObat(mainAPK);     getch(); goto ObatLabel;
         case 9  :  system("cls"); searchAPK(mainAPK);          getch(); goto ObatLabel;
         case 10  :  system("cls"); searchObat(mainAPK);        getch(); goto ObatLabel;
-//      case 11  :  system("cls"); sortapotek(mainAPK);    getch(); goto ObatLabel;
-            //     case 12  :  system("cls"); sortObat(mainAPK);          getch(); goto ObatLabel;
+        case 11  :  system("cls"); sortapotek(mainAPK);    getch(); goto ObatLabel;
+        //     case 12  :  system("cls"); sortObat(mainAPK);          getch(); goto ObatLabel;
         case 13  :  system("cls"); menucountObat(mainAPK);          getch(); goto ObatLabel;
         case 0  :  goto ExitLabel; // Case Exit
         default : cin.ignore();  goto ObatLabel; // Case Handling Inputan Lain
