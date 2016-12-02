@@ -1,9 +1,10 @@
+#ifndef APOTEKPEDIA_H_INCLUDED
+#define APOTEKPEDIA_H_INCLUDED
+
 //
 // Created by Dani Agung Prastiyo on 20/11/2016.
 //
 
-#ifndef APOTEKPEDIA_VERSI_3_APOTEKPEDIA_H
-#define APOTEKPEDIA_VERSI_3_APOTEKPEDIA_H
 
 // ---- Library --- //
 #include <iostream>
@@ -37,9 +38,9 @@ struct infotypeObat {
     string namaObat;
     string kadaluarsa;
     string stock;
-    float hargaObat;
+    string hargaObat;
     string jenisObat;
-    addressAnggota anggota;
+
 };
 
 // ------ Tipe Bentukan Element List ------ //
@@ -72,6 +73,7 @@ struct Obat {
 
 //----------------- Fungsi dan Prosedur Default ----------------//
 void createListAPK(apotek &R);
+void createListObat(Obat &R);
 void createAPK(infotypeAPK &APK);
 void createObat(infotypeObat &ObatAPK);
 addressAPK alokasiAPK(infotypeAPK APK);
@@ -113,16 +115,9 @@ void countTotalAPK(apotek APK);
 void countTotalObat(apotek APK);
 void menucountObat(apotek APK);
 
-int countLengthObat(addressObat PAPK);
+
 void sortapotek(apotek &APK);
-void sortObat(apotek &APK);
+void sortobat(addressObat &APK);
 
 
-addressObat deleteObatFirstMergeSort(addressObat &M);
-void insertObatFirstMergeSort(addressObat &PAPK, addressObat M);
-void insertObatLastMergeSort(addressObat &PAPK, addressObat P);
-addressObat mergeInObat(addressObat left, addressObat right);
-addressObat mergeSortObat(addressObat PAPK);
-void sortObat(apotek &APK);
-
-#endif //APOTEKPEDIA_VERSI_3_APOTEKPEDIA_H
+#endif // APOTEKPEDIA_H_INCLUDED
