@@ -1258,21 +1258,18 @@ addressAPK cekmin (apotek APK)
     else
     {
         minimum = first(APK)->info.idAPK;
+        addressAPK Q;
         while (P != NULL )
         {
-            if (info(P).idAPK < minimum)
+            if (info(P).idAPK >= minimum)
             {
                 minimum = info(P).idAPK;
-
+                Q = P;
             }
             P = next(P);
 
         }
-        P = findElmAPK(APK,minimum);
-        if (P!=NULL)
-            return P;
-        else
-            return NULL;
+            return Q;
     }
 }
 void sortapotek(apotek &APK)
@@ -1298,7 +1295,8 @@ void sortapotek(apotek &APK)
             }
             else
             {
-                next(prev(P)) = next(P);
+                P->prev->next = next(P);
+                P->next->prev = prev(P);
             }
         }
         prev(P) = NULL;
